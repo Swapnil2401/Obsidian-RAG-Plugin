@@ -1,4 +1,4 @@
-import { App, ItemView, WorkspaceLeaf, Plugin, TFile, MarkdownRenderer } from 'obsidian';
+import { App, ItemView, WorkspaceLeaf, Plugin, MarkdownRenderer } from 'obsidian';
 import { request } from 'obsidian';
 
 const VIEW_TYPE_CHAT = 'chat-view';
@@ -22,9 +22,12 @@ export default class ChatPlugin extends Plugin {
         this.addRibbonIcon('message-square', 'Open Chat Panel', async () => {
             const leaves = this.app.workspace.getLeavesOfType(VIEW_TYPE_CHAT);
             if (leaves.length === 0) {
-                await this.app.workspace.getRightLeaf(false).setViewState({
-                    type: VIEW_TYPE_CHAT,
-                });
+                const rightLeaf = this.app.workspace.getRightLeaf(false);
+                if (rightLeaf) {
+                    await rightLeaf.setViewState({
+                        type: VIEW_TYPE_CHAT,
+                    });
+                }
             }
             this.app.workspace.revealLeaf(
                 this.app.workspace.getLeavesOfType(VIEW_TYPE_CHAT)[0]
@@ -124,7 +127,7 @@ class ChatView extends ItemView {
 
     async makeApiRequest(query: string): Promise<ApiResponse> {
         const response = await request({
-            url: 'http://localhost:5000/arraysum',
+            url: 'http://127.0.0.1:5000/arraysum',
             method: 'POST',
             body: JSON.stringify({ query }),
             headers: { 'Content-Type': 'application/json' }
