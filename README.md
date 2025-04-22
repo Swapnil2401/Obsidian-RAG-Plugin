@@ -18,7 +18,7 @@ Team members:
 3. Create an env file and store the Vault directory and Gemini API Key.
 4. Start backend server
    
-   `python new.py`
+   `python RAG.py`
 5. Start frontend
    
    `npm install`
