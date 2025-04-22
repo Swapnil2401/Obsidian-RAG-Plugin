@@ -16,7 +16,8 @@ collection_name = 'file-embeddings'
 collection = chroma_client.get_or_create_collection(name=collection_name)
 
 # Configure Google AI
-genai.configure(api_key="")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+genai.configure(api_key=GOOGLE_API_KEY)
 generation_config = {
     "temperature": 0.7,
     "top_p": 0.95,
@@ -28,7 +29,7 @@ model = genai.GenerativeModel(
     generation_config=generation_config,
 )
 
-ROOT_DIR = r"C:\Users\SREEHARI\Documents\Obsidian Vault"
+ROOT_DIR = os.getenv("VAULT_PATH")
 
 conversation_history = []
 
