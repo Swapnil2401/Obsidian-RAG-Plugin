@@ -179,7 +179,7 @@ def process_existing_files():
                 if file.endswith('.md'):
                     process_file(os.path.join(root, file))
 
-@app.route('/arraysum', methods=['POST'])
+@app.route('/chat', methods=['POST'])
 def array_sum():
     data = request.json
     query_text = data.get('query')
