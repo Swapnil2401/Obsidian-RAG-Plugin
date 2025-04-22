@@ -127,7 +127,7 @@ class ChatView extends ItemView {
 
     async makeApiRequest(query: string): Promise<ApiResponse> {
         const response = await request({
-            url: 'http://127.0.0.1:5000/arraysum',
+            url: 'http://127.0.0.1:5000/chat',
             method: 'POST',
             body: JSON.stringify({ query }),
             headers: { 'Content-Type': 'application/json' }
