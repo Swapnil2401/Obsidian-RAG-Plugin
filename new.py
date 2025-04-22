@@ -1,7 +1,5 @@
 import os
 import re
-import time
-import json
 import chromadb
 import google.generativeai as genai
 from watchdog.events import FileSystemEventHandler
@@ -52,6 +50,9 @@ def chunk_markdown(md_text, max_chunk_size=1000):
 
 def process_file(file_path):
     try:
+        if ".obsidian" in file_path or "node_modules" in file_path:
+            return
+
         with open(file_path, "r", encoding='utf-8') as file:
             text = file.read()
         
@@ -165,7 +166,7 @@ class MyEventHandler(FileSystemEventHandler):
             remove_file_embeddings(event.src_path)
 
 def is_valid_directory(path):
-    return not any(part.startswith('.') for part in path.split(os.sep))
+    return not any(part.startswith('.') or part == 'node_modules' for part in path.split(os.sep))
 
 def process_existing_files():
     for root, dirs, files in os.walk(ROOT_DIR):
