@@ -9,6 +9,8 @@ Team members:
 | Samrudhi Baldota | sb10212 |
 | Aarya Shah | as20383 |
 
+## Architecture:
+<img width="453" alt="Screenshot 2025-04-23 at 9 27 33 PM" src="https://github.com/user-attachments/assets/4a64f61e-7790-433d-8290-14a4a33daba5" />
 
 ## Setup instructions:
 1. Go to your vault directory in your terminal and clone this repo.
@@ -24,3 +26,4 @@ Team members:
    `npm install`
    `npm run dev`
 6. Open Obsidian and enable "sample plugin" plugin from settings. You should now see a chat symbol on the left plugins pane. Click on it and enjoy chatting with your vault!
+
