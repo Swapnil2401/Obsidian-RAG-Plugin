@@ -10,7 +10,8 @@ Team members:
 | Aarya Shah | as20383 |
 
 ## Architecture:
-<img width="453" alt="Screenshot 2025-04-23 at 9 27 33 PM" src="https://github.com/user-attachments/assets/4a64f61e-7790-433d-8290-14a4a33daba5" />
+<img width="444" alt="Screenshot 2025-04-23 at 9 29 08 PM" src="https://github.com/user-attachments/assets/c21a7d1e-64fb-4350-a61b-662faf5c4d5f" />
+
 
 ## Setup instructions:
 1. Go to your vault directory in your terminal and clone this repo.
